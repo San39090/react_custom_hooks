@@ -28,12 +28,15 @@ const UseFetch = () => {
 
   if(isLoading){
     return(
-        <div className="loading">Please.... Wait some time</div>
+        <h2 className="loading">Please.... Wait some time</h2>
     )
   }
-  if(!isLoading && error.state){
+  if(!isLoading && error.data.length>0){
+    console.log(error.data);
     return(
-        <div className="error">{error.data.length}</div>
+        <div className="error">
+          <h1>Error</h1>
+        </div>
     )
   }
 
